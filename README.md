@@ -1,52 +1,98 @@
-Cafe Billing System (Python)
-A simple console-based cafe billing system written in basic Python.
-It allows the user to select items from a menu, enter quantities, and then displays a detailed bill with the total amount.
+☕ Simple Command-Line Café Ordering System
+
+Project Overview
+
+This is a basic command-line application built in Python designed to simulate the core transactional process of a small café or restaurant. The system allows a cashier (or user) to view a fixed menu, take multiple orders sequentially, and instantly generate a final, itemized bill. The project emphasizes fundamental programming concepts like dictionary management, input validation, and simple arithmetic logic.
 
 Features
-Displays a fixed menu with item names and prices.
 
-Lets the user enter item names and quantities in a loop.
+The Café Ordering System provides the following core functionalities:
 
-Validates menu items and handles invalid inputs.
+Menu Display: Displays all available food and drink items along with their respective prices (FR1).
 
-Calculates and shows per-item cost and total bill amount.
+Order Input: Allows continuous input of item names and quantities until the order is finalized (FR2, FR6).
 
-Requirements
-Python 3.x installed on your system.
+Order Accumulation: Automatically adds ordered quantities if the same item is entered multiple times (FR5).
 
-No external libraries are required (only built-in Python functions).
+Input Validation: Handles non-numeric input for quantity and prompts the user for a correct integer value (FR4, NFR2).
 
-How to Run
-Save the Python code in a file, for example: cafe_billing.py.
+Billing: Calculates the subtotal for each item and generates the final grand total for the order (FR7, NFR1).
 
-Open a terminal or command prompt in the folder containing the file.
+Technologies/Tools Used
 
-Run the program with:
+Language: Python 3.x
 
-bash
-python cafe_billing.py
-Follow the on-screen instructions:
+Data Structures: Python Dictionaries (for Menu and Order tracking)
 
-Type the item name exactly as shown in the menu.
+Architecture: Command Line Interface (CLI)
 
-Enter the quantity as an integer.
+Steps to Install & Run the Project
 
-Type done when you have finished ordering.
+Since this is a single, self-contained Python script, installation is straightforward.
 
-Code Overview
-A dictionary menu stores item names as keys and prices as values.
+Prerequisites: Ensure you have Python 3.x installed on your system.
 
-A dictionary order stores ordered items and their total quantities.
+Save the Code: Save the provided Python code into a file named cafe_system.py.
 
-A loop takes user input until done is entered.
+Run the Script: Open your terminal or command prompt, navigate to the directory where you saved the file, and execute the script using the Python interpreter:
 
-At the end, the program multiplies price × quantity for each item and prints a formatted bill with the final total.
+python cafe_system.py
 
-Possible Improvements
-Add GST/tax and discount calculations.
 
-Save bills to a file for record-keeping.
+Interact: The program will prompt you to enter items from the menu until you type done.
 
-Add input validation for negative or zero quantities.
+Instructions for Testing
 
-Convert the program into a GUI app using Tkinter or a web app using Flask/Django.
+Manual Black Box testing was used to verify all functional and non-functional requirements.
+
+Positive Test Cases (Success Scenarios)
+
+Test Goal
+
+Expected Input
+
+Expected Outcome
+
+Single Item Order
+
+Coffee, quantity 1, then done
+
+Total amount: Rs. 50
+
+Accumulation
+
+Tea, quantity 1, then Tea, quantity 2, then done
+
+Tea quantity is 3, Total amount: Rs. 90
+
+Mixed Order
+
+Sandwich, quantity 1, Cake, quantity 1, then done
+
+Total amount: Rs. 115
+
+Negative Test Cases (Error Scenarios)
+
+Test Goal
+
+Input
+
+Expected Outcome
+
+Invalid Item
+
+Item: Soda
+
+System prints "Item not found in menu." and prompts again.
+
+Invalid Quantity
+
+Item: Juice, Quantity: ten
+
+System prints "Please enter a valid number for quantity." and prompts for quantity again.
+
+Case Sensitivity (Current Limitation)
+
+Item: coffee
+
+System prints "Item not found in menu." (Identified limitation).
