@@ -1,98 +1,176 @@
-☕ Simple Command-Line Café Ordering System
+📘 Cafe Billing System – Python (CLI Project)
 
-Project Overview
+A fully modular Command Line Interface (CLI) based billing system built in Python.
+This project automates café billing, GST calculation, order management, and sales reporting.
+It follows all academic requirements: modularity, architecture, testing, and documentation.
 
-This is a basic command-line application built in Python designed to simulate the core transactional process of a small café or restaurant. The system allows a cashier (or user) to view a fixed menu, take multiple orders sequentially, and instantly generate a final, itemized bill. The project emphasizes fundamental programming concepts like dictionary management, input validation, and simple arithmetic logic.
+⭐ 1. Project Overview
 
-Features
+The Café Billing System is a Python-based CLI application that allows staff to take orders, compute totals with GST, generate formatted bills, and store them for reporting.
 
-The Café Ordering System provides the following core functionalities:
+This project uses a multi-file modular structure, demonstrating clean separation of logic, file handling, testing, and proper software engineering practices.
 
-Menu Display: Displays all available food and drink items along with their respective prices (FR1).
+🎯 2. Objectives
 
-Order Input: Allows continuous input of item names and quantities until the order is finalized (FR2, FR6).
+•Provide a simple CLI-based user interface.
 
-Order Accumulation: Automatically adds ordered quantities if the same item is entered multiple times (FR5).
+•Automate subtotal, GST (18%), and total calculation.
 
-Input Validation: Handles non-numeric input for quantity and prompts the user for a correct integer value (FR4, NFR2).
+•Generate bills with timestamps and unique bill numbers.
 
-Billing: Calculates the subtotal for each item and generates the final grand total for the order (FR7, NFR1).
+•Save every bill in a log file.
 
-Technologies/Tools Used
+•Produce daily sales summaries.
 
-Language: Python 3.x
+•Demonstrate modular programming in Python.
 
-Data Structures: Python Dictionaries (for Menu and Order tracking)
+✨ 3. Features
+✔ Command Line Interface (CLI)
 
-Architecture: Command Line Interface (CLI)
+•Fast and interactive
 
-Steps to Install & Run the Project
+•No GUI required
 
-Since this is a single, self-contained Python script, installation is straightforward.
+•Perfect for academic modular projects
 
-Prerequisites: Ensure you have Python 3.x installed on your system.
+✔ Order Management
 
-Save the Code: Save the provided Python code into a file named cafe_system.py.
+•Add items with quantity
 
-Run the Script: Open your terminal or command prompt, navigate to the directory where you saved the file, and execute the script using the Python interpreter:
+•View current order
 
-python cafe_system.py
+•Clear order
+
+•Input validation
+
+✔ Billing
+
+•Subtotal calculation
+
+•Auto GST (18%)
+
+•Final total
+
+•Timestamp + bill number
+
+•Printable bill format
+
+✔ Storage & Reporting
+
+•Saves all bills to bills_log.txt
+
+•Summary report includes:
+
+•Total bills
+
+•Total revenue
+
+✔ Modular Design (Full Marks Requirement)
+
+•main.py – CLI + program flow
+
+•menu.py – Menu prices
+
+•billing.py – GST + billing logic
+
+•storage.py – File handling + reporting
+
+•test_billing.py – Testing logic
+
+🗂 4. Project Structure
+CafeBillingProject/
+│
+├── main.py
+├── menu.py
+├── billing.py
+├── storage.py
+├── test_billing.py
+│
+├── README.md
+└── bills_log.txt   ← Auto-created
+
+🏗 5. System Architecture
++-------------------------+
+|     User (CLI Input)    |
++-------------+-----------+
+              |
+              v
++-------------+-----------+
+|           main.py       |
+| (CLI + Program Control) |
++------+------+-----------+
+       |      |
+       |      |
+       v      v
++------+---+  +------------------+
+| menu.py |  |   billing.py      |
+| (Prices)|  | (All calculations)|
++----+----+  +--------+----------+
+               |
+               v
+        +------+-------------+
+        |     storage.py     |
+        | (Save + Summary)   |
+        +---------------------+
+
+🧪 6. Testing
+
+test_billing.py verifies:
+
+•Subtotal calculation
+
+•GST computation
+
+•Total calculation logic
+
+•Run tests:
+python test_billing.py
+
+▶️ 7. How to Run (CLI)
+•Step 1 — Clone repo
+git clone https://github.com/<your-username>/<your-repo>.git
+
+•Step 2 — Enter project folder
+cd CafeBillingProject
+
+•Step 3 — Run program
+python main.py
+
+📦 8. Bill Storage
+
+Bills are stored in:
+
+bills_log.txt
 
 
-Interact: The program will prompt you to enter items from the menu until you type done.
+Each bill includes:
 
-Instructions for Testing
+•Bill number
 
-Manual Black Box testing was used to verify all functional and non-functional requirements.
+•Timestamp
 
-Positive Test Cases (Success Scenarios)
+•Items & quantities
 
-Test Goal
+•Subtotal
 
-Expected Input
+•GST
 
-Expected Outcome
+•Total
 
-Single Item Order
+This file is used for generating daily summaries.
 
-Coffee, quantity 1, then done
+🚀 9. Future Enhancements
 
-Total amount: Rs. 50
+•GUI version (Tkinter)
 
-Accumulation
+•Discount coupons
 
-Tea, quantity 1, then Tea, quantity 2, then done
+•Payment options
 
-Tea quantity is 3, Total amount: Rs. 90
+•Export PDF bills
 
-Mixed Order
+•Database integration (SQLite)
 
-Sandwich, quantity 1, Cake, quantity 1, then done
+👤 10. Author
 
-Total amount: Rs. 115
-
-Negative Test Cases (Error Scenarios)
-
-Test Goal
-
-Input
-
-Expected Outcome
-
-Invalid Item
-
-Item: Soda
-
-System prints "Item not found in menu." and prompts again.
-
-Invalid Quantity
-
-Item: Juice, Quantity: ten
-
-System prints "Please enter a valid number for quantity." and prompts for quantity again.
-
-Case Sensitivity (Current Limitation)
-
-Item: coffee
-
-System prints "Item not found in menu." (Identified limitation).
+•Divyansh Agarwal
