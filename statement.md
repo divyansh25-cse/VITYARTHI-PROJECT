@@ -1,57 +1,191 @@
-Project Statement: Command-Line Café Ordering System
+📄 Project Statement — Cafe Billing System (CLI Based)
+1. Project Title
 
-Problem Statement
+•Cafe Billing System (CLI Application in Python)
 
-The manual processing of orders in a café—involving note-taking, complex arithmetic, and price lookups—is inherently inefficient and error-prone. This project addresses the need for a simple, electronic, and deterministic system to automate the core transaction workflow. The solution must centralize the menu data, accurately record customer selections (including item accumulation), validate user input to ensure system stability, and instantly generate a clear, itemized bill.
+2. Problem Statement
 
-Scope of the Project
+Small cafés often depend on manual billing, which leads to calculation mistakes, slower service, inconsistent record-keeping, and no automated daily reporting.
+A simple, reliable, and efficient billing tool is required to automate the process of taking orders, calculating totals, applying GST, generating bills, and maintaining sales records.
 
-The scope of the Command-Line Café Ordering System is intentionally narrow and focused on core transaction logic.
+The Cafe Billing System solves these problems by offering a Command Line Interface (CLI) based billing solution that is modular, easy to use, and ensures accurate calculations.
 
+3. Purpose of the Project
+
+•To provide a fast and accurate billing system for café operations
+
+•To enable café staff to generate bills efficiently using a text-based CLI
+
+•To automate GST calculation and total billing
+
+•To maintain a persistent log of bills for record-keeping
+
+•To generate daily sales summaries without manual effort
+
+•To demonstrate modular Python programming and software engineering practices
+
+4. Scope of the Project
 Included in Scope
+
+•Command Line Interface (CLI) based menu navigation
+
+•Order entry and quantity management
+
+•Subtotal, GST (18%), and total calculation
+
+•Automatic bill generation with timestamp and unique bill number
+
+•Saving each bill in a file (bills_log.txt)
+
+•Summary report showing:
+
+•Total bills generated
+
+•Total revenue
+
+•Modular implementation using multiple .py files
+
+•Testing using a separate test script
 
 Excluded from Scope
 
-- Menu display and pricing (hardcoded)
+•Graphical User Interface (GUI)
 
-- Graphical User Interface (GUI) or web interface
+•Online payment processing
 
-- Sequential order taking (single transaction)
+•Database integration
 
-- Database or file storage (no data persistence)
+•Inventory management
 
-- Quantity validation (integer check)
+•Multi-user authentication system
 
-- Inventory management or stock tracking
+5. Project Objectives
 
-- Final bill calculation and display
+•Develop a CLI-based billing system using Python.
 
-- User authentication or multiple user roles
+•Implement accurate billing computations including GST.
 
-- Basic error handling (\texttt{ValueError})
+•Store bills persistently for future reference.
 
-- Discounts, taxes, or complex pricing rules
+•Provide a summary of total sales and number of bills generated.
 
-The project is limited to a single-session, in-memory application run via the terminal.
+•Use a modular architecture consisting of 5+ Python files.
 
-Target Users
+•Demonstrate file handling, testing, and structural clarity as required by the academic rubric.
 
-The primary target users for this system are individuals who need a reliable, quick way to simulate or manage simple financial transactions in a service environment.
+6. Functional Requirements
 
-Primary User: Cashier / Service Staff: The individual directly interacting with the command-line interface to input customer orders and generate the bill.
+•Display Menu
 
-Secondary User: Students / Developers: Individuals learning Python who can use the simple, procedural code as a foundational example of input handling, dictionary use, and transactional logic.
+•System should show a list of available items and their prices.
 
-High-Level Features
+•Order Management
 
-The system offers the following key capabilities:
+•Add items with quantity
 
-Interactive Menu Access: Users can immediately view all available items and prices upon startup.
+•View current order
 
-Seamless Order Entry: The system remains open for continuous item entry until the transaction is manually closed using the designated command.
+•Clear entire order
 
-Robust Input Handling: The application gracefully manages incorrect data types (e.g., non-numeric quantity) without crashing, preserving system reliability.
+•Billing Functionality
 
-Real-Time Accumulation: Quantities for repeated items are tracked and summed automatically.
+•Calculate subtotal
 
-Itemized Billing: A final, clearly formatted receipt is generated, showing item details, subtotals, and the grand total.
+•Apply GST of 18%
+
+•Calculate final total
+
+•Generate unique bill number
+
+•Generate timestamp
+
+•Print formatted bill
+
+•Bill Storage
+
+•Save bill data to bills_log.txt
+
+•Sales Summary
+
+•Show total number of bills
+
+•Show total revenue collected
+
+•Exit System
+
+•User can exit the program through CLI menu
+
+7. Non-Functional Requirements
+
+•Usability
+
+The CLI interface must be simple, clear, and user-friendly.
+
+•Reliability
+
+System should generate correct billing amounts consistently.
+
+•Maintainability
+
+Code should be modular with logical separation across multiple Python files.
+
+•Performance
+
+Computations must run instantly without noticeable delay.
+
+•Portability
+
+Program must run on any system with Python installed (Windows, macOS, Linux).
+
+•Data Integrity
+
+Bills must be saved correctly and not overwritten.
+
+8. Constraints
+
+•Program must run in Python 3.x
+
+•Only standard Python libraries to be used
+
+•CLI-only interface (no GUI used)
+
+•Local file-based storage (no database)
+
+9. Assumptions
+
+•User has basic understanding of operating a CLI
+
+•Café menu items and prices remain constant
+
+•Bill log file is accessible and writable
+
+•Python interpreter is installed on the user’s system
+
+10. Methodology
+
+•Used a modular design approach with files:
+
+•main.py – CLI controller
+
+•menu.py – Menu data
+
+•billing.py – Billing logic
+
+•storage.py – File storage + summary
+
+•test_billing.py – Validations
+
+•Designed system architecture before coding
+
+•Verified functions through test cases
+
+•Implemented error handling and input validation
+
+11. Expected Outcome
+
+A fully functional, reliable, and easy-to-use CLI-powered cafe billing system capable of handling end-to-end billing operations, storing sales data, and generating summaries — all while being modular and well-documented.
+
+12. Conclusion
+
+The Cafe Billing System successfully meets the objectives of automating café billing using a clean and efficient Command Line Interface (CLI).
+Its modular structure, billing accuracy, file storage, and reporting capabilities fulfill all academic requirements and demonstrate a solid understanding of Python programming and software engineering best practices.
